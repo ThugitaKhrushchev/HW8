@@ -18,7 +18,7 @@ const string badword4 = "--nstuff--";
 //
 //Pre:
 //Post:
-void moveWord(int start, int end);
+void moveWord(string & result, int start, int end);
 
 //
 //Pre:
@@ -30,4 +30,10 @@ void eraseBadWord(string & result, const string badword);
 //Post:
 void switchApostrophe(string & result);
 
+//
+//Pre:
+//Post:
+void fifthIsSpecial(string & result);
+
 #endif // HW8_HEADER_H
+ 
