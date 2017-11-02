@@ -12,6 +12,18 @@
 #include "hw8_header.h"
 using namespace std;
 
+void replaceWord(string & result, const string wordToReplace,
+  const string replacedWord)
+{
+  int position = result.find(wordToReplace);
+  while(position != std::string::npos)
+  {
+    result.replace(position, wordToReplace.length(), replacedWord);
+    position = result.find(wordToReplace, position);
+  }
+  return;
+}
+
 void eraseBadWord(string & result, const string badword)
 {
   int p = result.find(badword);
@@ -20,6 +32,12 @@ void eraseBadWord(string & result, const string badword)
     result.erase(p, badword.length()+1);
     p = result.find(badword, p);
   }
+  return;
+}
+
+void moveWord(string & result, int start, int end)
+{
+  return;
 }
 
 void switchApostrophe(string & result)
@@ -33,8 +51,33 @@ void switchApostrophe(string & result)
 
     i = result.find("'",i+1);
     temp = result[i+1];
-    result[i] = '#';
+    result[i+1] = '#';
+    result[i] = temp;
   }
-  //replace(result.begin());
-  cout << temp << endl;
+  replace( result.begin(), result.end(), '#', '\'' );
+  return;
+}
+
+void fifthIsSpecial(string & result)
+{
+  int j = 0;
+  for (int i=0;i<10;i++)
+  {
+    int temp = j;
+    int newj;
+    int dif;
+    newj = result.find(".",j+1);
+    dif = newj-j;
+    j = result.find(".",j+1);
+    if (j==-1)
+    {
+      j = temp;
+    }
+    if (i%2==0||i==0)
+    {
+      result[j] = '"';
+    }
+  }
+  cout << endl << j << endl;
+  return;
 }

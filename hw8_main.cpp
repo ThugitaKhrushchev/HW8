@@ -14,7 +14,7 @@ using namespace std;
 
 int main()
 {
-  ifstream inf("encrypted.dat");
+  ifstream inf("encrypted.dat"); //declaring/opening the streams
   ofstream outf("decrypted.dat");
   if (!inf)
   {
@@ -22,16 +22,6 @@ int main()
   }
 
   int i = 0;
-  int words = 1;
-  int pos;
-  int sentences = 0;
-  int she = 0;
-  int her = 0;
-  int my = 0;
-  int there = 0;
-  int you = 0;
-  int frogs = 0;
-
   string input;
   getline(inf, input);
 
@@ -45,13 +35,24 @@ int main()
   string result = buffer.str();
   int gent = input.length();
 
+  replaceWord(result, wordToReplace1, replacedWord1);
+  replaceWord(result, wordToReplace2, replacedWord2);
+  replaceWord(result, wordToReplace3, replacedWord3);
+  replaceWord(result, wordToReplace4, replacedWord4);
+  replaceWord(result, wordToReplace5, replacedWord5);
+  replaceWord(result, wordToReplace6, replacedWord6);
+
   eraseBadWord(result, badword1);
   eraseBadWord(result, badword2);
   eraseBadWord(result, badword3);
   eraseBadWord(result, badword4);
+  result.erase(333, result.length());
 
   switchApostrophe(result);
-  outf << result;
+  fifthIsSpecial(result);
 
+  outf << result; //printing the string to the outfile
+  inf.close(); //closing the streams
+  outf.close();
   return(0);
 }
