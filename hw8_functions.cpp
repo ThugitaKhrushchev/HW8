@@ -12,17 +12,24 @@
 #include "hw8_header.h"
 using namespace std;
 
-void eraseBadWord(string & result, const string badword)
+void eraseBadWord(string &result, string badword)
 {
   int p = result.find(badword);
   while (p != std::string::npos)
-  {
+	{
     result.erase(p, badword.length()+1);
     p = result.find(badword, p);
-  }
+	}
 }
 
-void switchApostrophe(string & result)
+
+void moveWord(string &result, int start, int end)
+{
+  //work in progress 
+}
+
+
+void switchApostrophe(string &result)
 {
   int i = 0;
   int total = 0;
@@ -30,11 +37,21 @@ void switchApostrophe(string & result)
   while (result.find("'",i) != -1)
   {
     total += i;
-
+    
     i = result.find("'",i+1);
     temp = result[i+1];
-    result[i] = '#';
+    result[i+1] = '#';
+    result[i] = temp;   
   }
-  //replace(result.begin());
-  cout << temp << endl;
+  replace( result.begin(), result.end(), '#', '\'' );
+}
+
+void fifthIsSpecial(string &result)
+{
+  int j = 0;
+  for (int i=0;i<2;i++)
+  {
+    j = result.find(".",j);
+  }
+  cout << endl << j << endl;
 }
