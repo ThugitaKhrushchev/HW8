@@ -29,6 +29,7 @@ const string badword3 = "--errr--";
 const string badword4 = "--nstuff--";
 
 /* ----- Function Prototypes -----*/
+<<<<<<< HEAD
 
 // The replaceWord function replaces the wordToReplace with replacedWord.
 //Pre: There must be data in the input file, which has to be part of the
@@ -37,6 +38,12 @@ const string badword4 = "--nstuff--";
 //      modified string.
 void replaceWord(string & result, const string wordToReplace,
   const string replacedWord);
+=======
+//
+//Pre:
+//Post:
+void moveWord(string & result, int start, int end);
+>>>>>>> 80ffefcfe7d541729a78999f9fd83dcd81293575
 
 //
 //Pre:
@@ -63,4 +70,10 @@ void switchApostrophe(string & result);
 //Post:
 void fifthIsSpecial(string & result);
 
+//
+//Pre:
+//Post:
+void fifthIsSpecial(string & result);
+
 #endif // HW8_HEADER_H
+ 
