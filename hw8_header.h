@@ -43,11 +43,6 @@ void replaceWord(string & result, const string wordToReplace,
 //Post:
 void moveWord(string & result, int start, int end);
 
-//
-//Pre:
-//Post:
-void moveWord(string & result, int start, int end);
-
 // The eraseBadWord function removes any of the badwords from the input file.
 //Pre: There must be data in the input file, which has to be part of the
 //     string object class result.
@@ -69,4 +64,3 @@ void switchApostrophe(string & result);
 void fifthIsSpecial(string & result);
 
 #endif // HW8_HEADER_H
- 
