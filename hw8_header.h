@@ -9,6 +9,8 @@
 using namespace std;
 
 /* ----- Global Constants -----*/
+const int sentence_start = 0; // the possible number of characters in one
+const int sentence_end = 500; // sentence
 const string wordToReplace1 = "she"; // the words that will be replaced
 const string wordToReplace2 = "her";
 const string wordToReplace3 = "my";
