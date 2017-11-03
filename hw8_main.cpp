@@ -27,7 +27,7 @@ int main()
 
   ostringstream buffer;
 
-  for(int i = 0; i < 500; ++i)
+  for(int i = sentence_start; i < sentence_end; ++i)
   {
     buffer << input[i];
   }
